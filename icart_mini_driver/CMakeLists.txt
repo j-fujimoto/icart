@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 2.8.3)
 project(icart_mini_driver)
 
 find_package(catkin REQUIRED COMPONENTS
-    roscpp 
+    roscpp
     hardware_interface
     controller_manager
-    YPSpur
 )
+find_package(YPSpur)
 
 catkin_package(
 #  INCLUDE_DIRS include
