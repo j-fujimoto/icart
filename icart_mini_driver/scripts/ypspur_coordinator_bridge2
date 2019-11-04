@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+# Author : Daiki Maekawa
+
+ypspur-coordinator -p $1 -d /dev/ttyACM0 &
+echo "robot parameters [$1] loaded"
+
+while true
+do
+isAlive=`ps -ef | grep " ypspur-coordinator " | \
+grep -v grep | wc -l`
+if [ $isAlive = 1 ]; then
+: #pass
+else
+echo "ypspur restart [$1]"
+ypspur-coordinator -p $1 -d /dev/ttyACM0 &
+fi
+sleep 1
+done
+
