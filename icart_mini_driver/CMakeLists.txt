@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
     controller_manager
 )
 find_package(YPSpur)
+set(YPSPUR_LIBRARIES ypspur)
 
 catkin_package(
 #  INCLUDE_DIRS include
